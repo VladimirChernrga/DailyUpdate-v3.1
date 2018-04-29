@@ -17,7 +17,7 @@ using MySql.Data.MySqlClient;
 
 
 
-//recavery
+
 namespace DailyUpdate_v3._1
 {
 
@@ -340,7 +340,7 @@ namespace DailyUpdate_v3._1
 
             if (cmbox_Stage.SelectedValue == null)
             {
-                MessageBox.Show("Fill field stage");
+                MessageBox.Show("Fill in field stage");
             }
             else
             {
@@ -357,7 +357,7 @@ namespace DailyUpdate_v3._1
 
                 if (error.Error.Contains("Duplicate entry"))
                 {
-                    MessageBox.Show("The WO exist already ");
+                    MessageBox.Show("The WO already exists");
                     DataTable dt = data.fillMyAdapter(selectQuery);
                     string id_main = dt.Rows[0][0].ToString(); //for Updete SUB DataGridView
                     selectQuery = "SELECT tb_main.*, tb_stage.stage_type, tb_employee.employee_first_name " +
@@ -507,7 +507,7 @@ namespace DailyUpdate_v3._1
             }
             else
             {
-                MessageBox.Show("Choose row for delete");
+                MessageBox.Show("Choose a row to delete");
             }
         }
         //string idFailureCode;
@@ -531,7 +531,7 @@ namespace DailyUpdate_v3._1
             //dataGridViewSubTbMain.UnselectAllCells(); // Unselect datagridview
             if (textBox_WO.Text == string.Empty & textBox_SN.Text == string.Empty)
             {
-                MessageBox.Show("Fill field WO and(or) S/N");
+                MessageBox.Show("Fill in field WO and/or S/N");
             }
             else
             {
@@ -600,7 +600,7 @@ namespace DailyUpdate_v3._1
         {
 
             MyData workSpace = new MyData();
-            MessageBox.Show(workSpace.ActiveWorkSpace);
+            //MessageBox.Show(workSpace.ActiveWorkSpace);
 
             if (workSpace.ActiveWorkSpace == "PreClean")
             {
@@ -653,12 +653,12 @@ namespace DailyUpdate_v3._1
                     }
                     else
                     {
-                        MessageBox.Show("Fill field stage");
+                        MessageBox.Show("Fill in field stage");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("You cannot update, because you are not owner the row.");
+                    MessageBox.Show("You cannot update this, because you are not the owner of the row.");
                 }
             }
         }
@@ -721,12 +721,12 @@ namespace DailyUpdate_v3._1
                 }
                 else
                 {
-                    MessageBox.Show("Fill field stage");
+                    MessageBox.Show("Fill in field stage");
                 }
             }
             else
             {
-                MessageBox.Show("You cannot update, because you are not owner the row.");
+                MessageBox.Show("You cannot update this, because you are not the owner of the row.");
             }
 
 
@@ -835,7 +835,7 @@ namespace DailyUpdate_v3._1
             if (activeDataGridView == "dataGridViewTbMain" & rowCountSubDataGrid > 0)
             {
 
-                MessageBox.Show("Cannot delete the WO. Delete rows in worksheet first");
+                MessageBox.Show("You cannot delete the WO. Delete all the rows in the worksheet first.");
                 dataGridViewTbMain.Focus();
 
 
@@ -843,7 +843,7 @@ namespace DailyUpdate_v3._1
             else if (activeDataGridView == "dataGridViewTbMain" & rowCountSubDataGrid == 0)
             {
 
-                MessageBox.Show("row will be delete");
+                MessageBox.Show("The row will be delete");
                 string query = "DELETE FROM `tb_main` WHERE id_main = " + id_main;
 
 
@@ -921,7 +921,7 @@ namespace DailyUpdate_v3._1
                 {
                     if (cmbox_Stage.SelectedValue == null)
                     {
-                        MessageBox.Show("Fill field stage");
+                        MessageBox.Show("Fill in field stage");
                     }
                     else
                     {
