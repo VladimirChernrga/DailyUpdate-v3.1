@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="DailyUpdate_v3._1.TemporaryUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DailyUpdate_v3._1"
+             mc:Ignorable="d" Width="806" Height="671" 
+             >
+    <Grid ShowGridLines="True" Grid.Column="2" Background="LightGray" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" BorderBrush="Black" 
+                    BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Content="W/O:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                    <TextBox x:Name="TextBoxWO"   MinWidth="350"
+                            FontSize="15"
+                            TabIndex="0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Content="SKU:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                    <TextBox x:Name="TextBoxSKU"  MinWidth="350"
+                            FontSize="15"
+                            TabIndex="0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Content="S/N:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                    <TextBox x:Name="TextBoxSN" MinWidth="350"
+                            FontSize="15"
+                            TabIndex="0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10">
+                    <Label Content="S/N:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                    <TextBox x:Name="TextREF"   MinWidth="350"
+                            FontSize="15"
+                            TabIndex="0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0">
+                    <Label Content="Notes:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="10,0">
+                    <TextBox x:Name="TextNotes"  MinWidth="385" MaxHeight="75"
+                              VerticalScrollBarVisibility ="Visible"
+                             AcceptsReturn="True"
+                         
+                            FontSize="15"
+                            TabIndex="0" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" BorderBrush="Black" 
+                    BorderThickness="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <StackPanel >
+                    <Label Content="Search/Report" 
+                           HorizontalAlignment="Center"
+                           FontSize="25" FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel>
+                    <CheckBox Content="All days" HorizontalAlignment="Center" FontSize="15" Margin="5"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10">
+                    <Label Content="Between:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                    <DatePicker VerticalAlignment="Center"/>
+                    <Label Content="and:" 
+                           VerticalAlignment="Center"
+                           FontSize="15"/>
+                    <DatePicker VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,20">
+
+                    <Border BorderBrush="Black" BorderThickness="1" >
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                            <RadioButton  Content="All" FontSize="15"/>
+                            <RadioButton  Content="Passe" FontSize="15" Margin="40,0"/>
+                            <RadioButton  Content="Faile" FontSize="15"/>
+                        </StackPanel>
+
+                    </Border >
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+
+                    <Button x:Name="BtSearch" Content="Search" MinHeight="35" MinWidth="70" Margin=" 10,0" Width="90"/>
+
+                    <Button x:Name="BtSendReport" Content="Send Report" MinHeight="35" MinWidth="70" Margin="10,0" Width="90"/>
+
+                </StackPanel>
+
+
+
+            </StackPanel>
+        </Border>
+
+
+
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="2" Margin="10"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,305 @@
+﻿<UserControl x:Class="DailyUpdate_v3._1.SetupUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DailyUpdate_v3._1"
+             mc:Ignorable="d" d:DesignWidth="701" d:DesignHeight="546.5"  
+             >
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <!--<RowDefinition Height="0.9*" /> -->
+            <RowDefinition Height ="0.1*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height ="*" />
+            <RowDefinition Height ="0.3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="7"  CornerRadius="20"  BorderThickness="4" BorderBrush="#653E6F0A">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="8" Color="Black" Opacity="0.5" />
+            </Border.Effect>
+            <Border.Background>
+                <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0,0" EndPoint="0,0.5">
+                    <GradientStop Color="Gray" Offset="0"></GradientStop>
+                    <GradientStop Color="Gold" Offset="1"></GradientStop>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Border Grid.RowSpan="3" BorderBrush="Tomato"
+                BorderThickness="3"
+                CornerRadius="20"
+                Margin="10"/>
+        <Border x:Name="borderAdministrator" Grid.Row="3" Grid.RowSpan="4" BorderBrush="Tomato"
+                BorderThickness="3"
+                CornerRadius="20"
+                Margin="5" Loaded="borderAdministrator_Loaded"/>
+
+
+
+        <Grid Grid.Row="1" Grid.RowSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+
+            <Label Grid.Column="0" Content="Old Password" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   FontSize="12"/>
+            <PasswordBox Grid.Column="1" x:Name="TextBoxOldPassword" PasswordChar="*" 
+                   VerticalAlignment="Center"
+                   TabIndex="0" FontSize="12"/>
+            <Label Grid.Column="2" Content="New Password" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right"
+                   FontSize="12" />
+            <PasswordBox Grid.Column="3" x:Name="TextBoxPassword" PasswordChar="*" TabIndex="1"   
+                   VerticalAlignment="Center" FontSize="12"/>
+            <Label Grid.Column="4" Content="ReNew Password"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   FontSize="12"/>
+            <PasswordBox Grid.Column="5" x:Name="TextBoxRePassword" PasswordChar="*" TabIndex="2" Height="22"  
+                   VerticalAlignment="Center"/>
+            <Button Grid.Column="6" Content="Save" VerticalAlignment="Center"  Margin="5,0,20,0" TabIndex="3"/>
+
+            
+            
+            
+            
+            <Label Grid.Row ="2" Grid.Column="2" Content="E-mail" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="12"/>
+            <TextBox Grid.Row ="2" Grid.Column="3" Grid.ColumnSpan="2" 
+                   x:Name="TextBoxHostName"  
+                   TabIndex="4" 
+                   VerticalAlignment="Center"/>
+            <Button Grid.Row ="2" Grid.Column="5" Content="Save" VerticalAlignment="Center" Margin="10,0" TabIndex="5"/>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="7">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row ="0" Grid.Column="2" Content="Firtst window" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="12"/>
+                <RadioButton x:Name="RdButPreClean" Content="Pre Clean" GroupName="FirstPanel" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RdButTesting" Content="Testing" GroupName="FirstPanel" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RdButDebug" Content="Debug" GroupName="FirstPanel" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RdButRepaire" Content="Repair" GroupName="FirstPanel" Grid.Column="4" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RdButPreFinalQc" Content="Final QC" GroupName="FirstPanel" Grid.Column="5" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                <RadioButton x:Name="RdButReport" Content="Report" GroupName="FirstPanel" Grid.Column="6" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+            </Grid>
+
+
+
+        </Grid>
+
+        <Grid x:Name="gridAdministrator1" Grid.Row="3" Grid.RowSpan="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="First name" 
+                Grid.Row="1"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="12" />
+            <TextBox x:Name="TextBoxFirstName" 
+                     Grid.Row="1"
+                     Grid.Column="1"
+                VerticalAlignment="Center"
+                     Margin="5"
+                TabIndex="6" PreviewMouseDown="TextBoxFirstName_PreviewMouseDown" />
+            <Label Content="Last Name" 
+               Grid.Row="1"
+                Grid.Column="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="12" />
+            <TextBox x:Name="TextBoxLastName" TabIndex="7"
+                Grid.Column="3"
+                   Grid.Row="1"  
+                VerticalAlignment="Center"
+                FontSize="12" PreviewMouseDown="TextBoxLastName_PreviewMouseDown"/>
+            <Label Content="Initials"
+                Grid.Row="1"
+                   Grid.Column="4"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="12" />
+            <TextBox x:Name="TextBoxInitials" TabIndex="8"
+                Grid.Row="1"
+                     Grid.Column="5"     
+                VerticalAlignment="Center"
+                Margin="5,0,15,0"
+                FontSize="12" PreviewMouseDown="TextBoxInitials_PreviewMouseDown" />
+
+            <Label Content="Login"
+                Grid.Row="2"
+                Grid.Column="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="12" />
+            <TextBox x:Name="TextBoxLoginUser" TabIndex="9"
+                Grid.Row="2"
+                Grid.Column="1"     
+                VerticalAlignment="Center"
+                Margin="5,0,15,0"
+                FontSize="12" PreviewMouseDown="TextBoxLoginUser_PreviewMouseDown" />
+            <Label Content="Password"
+                Grid.Row="2"
+                Grid.Column="2"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                FontSize="12" />
+
+            <PasswordBox x:Name="TextBoxPasswordUser" PasswordChar="*" 
+                         Grid.Column="3" Grid.Row="2"
+                         TabIndex="10"   
+                   VerticalAlignment="Center" FontSize="12" PreviewMouseDown="TextBoxPasswordUser_PreviewMouseDown"/>
+            <Grid Grid.Row="3" Grid.ColumnSpan="6" Height="25" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <CheckBox x:Name="ChkBoxAdministrator" Content="Admin"
+                      Grid.Column="1"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right" Margin="0,4,0,5" Width="70" Checked="ChkBoxAdministrator_Checked"/>
+                <CheckBox x:Name="ChkBoxDismissed" Content="Dismissed" 
+                       Grid.Column="2"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Left" Checked="ChkBoxDismissed_Checked"/>
+                <CheckBox x:Name="ChkBoxPreClean" Content="Pre-Clean" 
+                      Grid.Column="3"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right" Checked="ChkBoxPreClean_Checked"/>
+                <CheckBox x:Name="ChkBoxTesting" Content="Testing" 
+                      Grid.Column="4"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right" Checked="ChkBoxTesting_Checked"/>
+                <CheckBox x:Name="ChkBoxDebug" Content="Debug" 
+                      Grid.Column="5"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center" Checked="ChkBoxDebug_Checked"/>
+                <CheckBox x:Name="ChkBoxRepaire" Content="Repaire" 
+                       Grid.Column="6"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center" Checked="ChkBoxRepaire_Checked"/>
+                <CheckBox x:Name="ChkBoxFinalQC" Content="Final QC" 
+                       Grid.Column="7"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center" Checked="ChkBoxFinalQC_Checked"/>
+                <CheckBox x:Name="ChkBoxReport" Content="Report" 
+                       Grid.Column="8"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Center" Checked="ChkBoxReport_Checked"/>
+
+
+            </Grid>
+
+
+        </Grid>
+        <Grid x:Name="gridAdministrator2"  Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+
+
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btAddUser" Content="Add" 
+                    Grid.Row="3" Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Margin="5" Click="btAddUser_Click"/>
+            <Button x:Name="btDeleteUser" Content="Delete" Grid.Row="3" Grid.Column="2"
+                    VerticalAlignment="Center"
+                    Margin="5" Click="btDeleteUser_Click"/>
+            <Button x:Name="btUpdateUser" Content="Update" Grid.Row="3" Grid.Column="3"
+                    VerticalAlignment="Center"
+                    Margin="5" Click="btUpdateUser_Click"/>
+            <Button x:Name="btClear" Content="Clear" Grid.Row="3" Grid.Column="4"
+                    VerticalAlignment="Center"
+                    Margin="5" Click="btClear_Click"/>
+
+        </Grid>
+        <DataGrid x:Name="dataGridViewUser" ItemsSource="{Binding}" HorizontalAlignment="Center" 
+                  Grid.Row="5" Grid.RowSpan="2" 
+                  ScrollViewer.CanContentScroll="True" 
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  Margin="0,15" AutoGeneratingColumn="OnAutoGeneratingColumn" SelectionChanged="dataGridViewUser_SelectionChanged" >
+            <DataGrid.Columns>
+
+
+
+                <!-- тут определяете все нужные вам столбцы 
+                <DataGridTextColumn Header="id" Width="*" Binding="{Binding id }" />
+                <DataGridTextColumn Header="Description" Width="*" Binding="{Binding Path=Description}" />
+                
+                -->
+            </DataGrid.Columns>
+        </DataGrid >
+
+
+
+
+    </Grid>
+</UserControl>
