@@ -284,6 +284,14 @@ namespace DailyUpdate_v3._1
             usersFormUC.debugRepair("Repaire");
             stPanelUserControl.Children.Add(usersFormUC);
         }
+
+        private void BtMyreport_Click(object sender, RoutedEventArgs e)
+        {
+            stPanelUserControl.Children.Clear();
+            MyReportUc myReportUc = new MyReportUc();
+            stPanelUserControl.Children.Add(myReportUc);
+            
+        }
     }
 
 }

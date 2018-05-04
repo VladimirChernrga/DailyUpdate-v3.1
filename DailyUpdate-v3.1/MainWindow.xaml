@@ -149,6 +149,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.2*"/>
@@ -177,16 +178,19 @@
             <Button Grid.Row="7" Grid.Column="1" x:Name="BtRepaire" 
                     Content="Repaire" Click="BtRepaire_Click"/>
 
-            <Button Grid.Row="9" Grid.Column="1" x:Name="BtReport" 
+            <Button Grid.Row="8" Grid.Column="1" x:Name="BtMyreport" 
+                    Content="My Report" Click="BtMyreport_Click"/>
+
+            <Button Grid.Row="10" Grid.Column="1" x:Name="BtReport" 
                     Content="Report" 
                     Click="BtReport_Click"/>
-            <Button Grid.Row="10" Grid.Column="1" x:Name="BtSetup" 
+            <Button Grid.Row="11" Grid.Column="1" x:Name="BtSetup" 
                     Content="Setup" 
                     Click="BtSetup_Click"/>
 
             
 
-            <Button Grid.Row="11" Grid.Column="1" x:Name="BtExit" 
+            <Button Grid.Row="12" Grid.Column="1" x:Name="BtExit" 
                     Content="Exit" 
                     Click="BtExit_Click_1"
                     />
